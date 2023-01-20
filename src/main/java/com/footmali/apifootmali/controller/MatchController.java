@@ -31,12 +31,8 @@ public class MatchController {
 
 
     @GetMapping("/match/{id}")
-    List<Match> getMatchById(@PathVariable Integer id) {
-        Match match = new Match();
-        match.setId(id);
-        match.setTeamAway("Liverpool");
-        match.setTeamHome("Chelsea");
-        return List.of(match);
+    Match getMatchById(@PathVariable Integer id) {
+       return  matchService.getMatchById(id);
     }
 
     @PostMapping("/match")
